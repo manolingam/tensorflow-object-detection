@@ -7,15 +7,6 @@ const c = document.getElementById('canvas');
 //creating context for canvas (whether it's 2d or 3d)
 const context = c.getContext('2d');
 
-//event listener to monitor the screen size
-window.addEventListener('resize', () => {
-	if (window.screen.width > 800) {
-		document.getElementById('warning').style.display = 'none';
-	} else {
-		document.getElementById('warning').style.display = 'flex';
-	}
-});
-
 //hide the predictions, loading spinner and canvas when the page is initially loaded
 predictionsDiv.style.display = 'none';
 loading.style.display = 'none';
