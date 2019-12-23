@@ -1,0 +1,30 @@
+/* font from google fonts */
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+
+/* style for the container */
+.container {
+	font-family: 'Share Tech Mono', monospace;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px;
+}
+
+/* style for the input tag */
+.file-input {
+	max-width: 30%;
+}
+
+/* we don't wanna show the image tag as the image is displayed dynamically using canvas along with the predicted rectangles */
+img {
+	display: none;
+}
+
+/* we don't wanna show the container when the screen size is less than 800px */
+@media only screen and (max-width: 800px) {
+	.container {
+		display: none;
+	}
+}

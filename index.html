@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Object Detection</title>
+		<!-- Tensorflow scripts -->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+		<!-- Bootstrap stylesheet -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<!-- Our own stylesheet -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Since the page is not responsive, am using a warning message to inform the users when screen size is less than 800px -->
+		<div
+			id="warning"
+			style="font-family: 'Share Tech Mono', monospace; height: 100vh; display: flex; align-items: center; justify-content: center;"
+		>
+			<span
+				>Please use a wider screen size of more than 800px to use the
+				app</span
+			>
+		</div>
+		<!-- This is the main div where all the elements of the page are contained -->
+		<div class="container">
+			<h2>
+				Object Detection with
+				<span style="color: darkorange;">Tensorflow</span>
+			</h2>
+			<br />
+			<img id="img" height="399" width="600" />
+			<!-- This is the input div imported from bootstrap -->
+			<div class="input-group mb-3 file-input">
+				<div class="input-group-prepend"></div>
+				<div class="custom-file">
+					<input
+						type="file"
+						class="custom-file-input"
+						id="image-input"
+						aria-describedby="inputGroupFileAddon01"
+						accept="image/*"
+					/>
+					<label class="custom-file-label" for="inputGroupFile01"
+						>Choose file</label
+					>
+				</div>
+			</div>
+			<br />
+			<!-- A temporary spinner to show progress while the model is detecting objects -->
+			<div class="spinner-grow" id="loading" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+			<!-- Canvas is used to draw the rectangles over the detected objects -->
+			<canvas
+				id="canvas"
+				height="399"
+				width="600"
+				style="text-align: center; "
+			></canvas
+			><br />
+			<!-- This div shows the predictions in a nice text and list summary -->
+			<div id="predictions">
+				<p id="summary"></p>
+				<ul id="list"></ul>
+			</div>
+		</div>
+		<!-- Bootstrap scripts -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+		></script>
+		<!-- Our own script -->
+		<script src="app.js"></script>
+	</body>
+</html>
