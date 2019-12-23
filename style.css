@@ -1,6 +1,11 @@
 /* font from google fonts */
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
 
+/* hide the warning message initially */
+#warning {
+	display: none;
+}
+
 /* style for the container */
 .container {
 	font-family: 'Share Tech Mono', monospace;
@@ -23,8 +28,14 @@ img {
 }
 
 /* we don't wanna show the container when the screen size is less than 800px */
+/* Also we wanna display the warning message */
 @media only screen and (max-width: 800px) {
 	.container {
 		display: none;
+	}
+	#warning {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
